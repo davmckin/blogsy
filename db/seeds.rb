@@ -11,12 +11,12 @@
     email: Faker::Internet.free_email,
     bio: Faker::ChuckNorris.fact
     )
-  (0..10).to_a.shuffle do
-    user.post.create!(
+  rand(1..10).times do
+    user.posts.create!(
       title: Faker::HarryPotter.location,
       body: Faker::HarryPotter.quote
       )
 
   end
-  
+
 end
